@@ -32,7 +32,7 @@ public class Main {
 				session.close();
 			}
 			
-			HibernateSession.getSessionFactory().close();
+			HibernateSession.getSessionFactory().close(); 
 			sc.close();
 		}
 	}
