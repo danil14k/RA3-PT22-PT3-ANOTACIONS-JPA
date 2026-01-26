@@ -29,7 +29,7 @@ public class Main {
 			ex.printStackTrace();
 		} finally {
 			if (session != null) {
-				session.close();
+				session.close(); 
 			}
 			
 			HibernateSession.getSessionFactory().close(); 
