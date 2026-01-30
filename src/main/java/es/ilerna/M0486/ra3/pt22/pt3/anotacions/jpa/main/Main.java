@@ -1,4 +1,4 @@
-package es.ilerna.M0486.ra3.pt22.pt3.anotacions.main;
+package es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.main;
 
 import java.util.List;
 import java.util.Scanner;
@@ -6,8 +6,8 @@ import java.util.Scanner;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import es.ilerna.M0486.ra3.pt22.pt3.anotacions.Person;
-import es.ilerna.M0486.ra3.pt22.pt3.anotacions.Student;
+import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Person;
+import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Student;
 
 public class Main {
 

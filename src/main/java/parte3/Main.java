@@ -1,4 +1,4 @@
-package es.ilerna.M0486.ra3.pt2.main;
+package parte3;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,13 +7,13 @@ import java.util.Scanner;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import es.ilerna.M0486.ra3.pt2.domain.Car;
-import es.ilerna.M0486.ra3.pt2.domain.Motorcycle;
-import es.ilerna.M0486.ra3.pt2.domain.Person;
-import es.ilerna.M0486.ra3.pt2.domain.Plane;
-import es.ilerna.M0486.ra3.pt2.domain.Student;
-import es.ilerna.M0486.ra3.pt2.domain.Teacher;
-import es.ilerna.M0486.ra3.pt2.domain.Vehicle;
+import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Car;
+import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Motorcycle;
+import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Person;
+import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Plane;
+import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Student;
+import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Teacher;
+import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Vehicle;
 
 public class Main {
 
@@ -59,14 +59,14 @@ public class Main {
 	}
 	
 	private static void fase1() {
-
+		
 	}
 	
 	private static void fase2() {
-
+		
 	}
 
 	private static void fase3() {
-
+		}
 	}
-}
+
