@@ -19,4 +19,4 @@ public class Motorcycle extends Vehicle {
     public void setHasSidecar(boolean hasSidecar) {
         this.hasSidecar = hasSidecar;
     }
-}
+} 
