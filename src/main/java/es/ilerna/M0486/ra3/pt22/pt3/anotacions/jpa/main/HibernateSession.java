@@ -13,7 +13,7 @@ import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Student;
 import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Teacher;
 import es.ilerna.M0486.ra3.pt22.pt3.anotacions.jpa.domain.Vehicle;
 
-public class HibernateSession {
+public class HibernateSession { 
 
 	private static final SessionFactory sessionFactory = buildSessionFactory();
 
