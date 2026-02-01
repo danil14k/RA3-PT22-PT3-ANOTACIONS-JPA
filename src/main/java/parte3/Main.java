@@ -59,7 +59,43 @@ public class Main {
 	}
 	
 	private static void fase1() {
+		Session session = HibernateSession.getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
 		
+		try {
+			Person p1 = new Person("Juan", "González");
+			Person p2 = new Person("María", "López");
+			Person p3 = new Student("Carlos", "Martínez", "DAM2");
+			Person p4 = new Teacher("Ana", "Fernández", "Programación");
+			
+			session.save(p1);
+			session.save(p2);
+			session.save(p3);
+			session.save(p4);
+			
+			Car car1 = new Car("Toyota", "Corolla", 2020, 4);
+			Car car2 = new Car("BMW", "X5", 2021, 5);
+			Motorcycle moto1 = new Motorcycle("Harley-Davidson", "Street 750", 2019, 750);
+			Plane plane1 = new Plane("Boeing", "747", 2015, 8);
+			
+			car1.setOwner(p1);
+			car2.setOwner(p2);
+			moto1.setOwner(p3);
+			plane1.setOwner(p4);
+			
+			session.save(car1);
+			session.save(car2);
+			session.save(moto1);
+			session.save(plane1);
+			
+			transaction.commit();
+			System.out.println("Fase 1 completada: Datos de prueba creados correctamente.");
+		} catch (Exception e) {
+			transaction.rollback();
+			System.out.println("Error en Fase 1: " + e.getMessage());
+		} finally {
+			session.close();
+		}
 	}
 	
 	private static void fase2() {
