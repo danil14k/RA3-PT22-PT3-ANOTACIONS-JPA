@@ -100,6 +100,7 @@ public class Main {
 	
 	private static void fase2() {
 		Session session = HibernateSession.getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
 		
 		try {
 			Vehicle vehicle = session.get(Vehicle.class, 1);
@@ -122,6 +123,32 @@ public class Main {
 	}
 
 	private static void fase3() {
+		Session session = HibernateSession.getSessionFactory().openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		try {
+			Vehicle vehicle = session.get(Vehicle.class, 1);
+			
+			if (vehicle != null && vehicle instanceof Car) {
+				Car car = (Car) vehicle;
+				car.setBrand("Mercedes-Benz");
+				car.setModel("C-Class");
+				car.setYear(2023);
+				car.setDoors(4);
+				
+				session.update(car);
+				transaction.commit();
+				System.out.println("Fase 3 completada: Vehiculo 1 actualizado correctament.");
+			} else {
+				System.out.println("Error: Vehiculo con ID 1 no encontrado o no es un coche.");
+				transaction.rollback();
+			}
+		} catch (Exception e) {
+			transaction.rollback();
+			System.out.println("Error en Fase 3: " + e.getMessage());
+		} finally {
+			session.close();
 		}
 	}
+}
 
