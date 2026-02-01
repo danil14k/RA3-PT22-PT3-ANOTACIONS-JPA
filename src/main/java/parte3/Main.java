@@ -99,7 +99,26 @@ public class Main {
 	}
 	
 	private static void fase2() {
+		Session session = HibernateSession.getSessionFactory().openSession();
 		
+		try {
+			Vehicle vehicle = session.get(Vehicle.class, 1);
+			
+			if (vehicle != null) {
+				vehicle.setOwner(null);
+				session.update(vehicle);
+				transaction.commit();
+				System.out.println("Fase 2 completada: Asociacion eliminada.");
+			} else {
+				System.out.println("Error: Vehiculo con ID 1 no encontrado.");
+				transaction.rollback();
+			}
+		} catch (Exception e) {
+			transaction.rollback();
+			System.out.println("Error en Fase 2: " + e.getMessage());
+		} finally {
+			session.close();
+		}
 	}
 
 	private static void fase3() {
